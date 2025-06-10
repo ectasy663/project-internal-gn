@@ -66,13 +66,21 @@ A modern, responsive React web application that allows users to record their voi
    cd voice-to-invoice-app
    ```
 
-2. Install dependencies:
+2. Install frontend dependencies:
 
    ```bash
+   cd frontend
    npm install
    ```
 
-3. **🔒 Set up environment variables (IMPORTANT)**:
+3. Install backend dependencies:
+
+   ```bash
+   cd ../backend
+   pip install -r requirements.txt
+   ```
+
+4. **🔒 Set up environment variables (IMPORTANT)**:
 
    ```bash
    # Copy environment templates
@@ -83,9 +91,17 @@ A modern, responsive React web application that allows users to record their voi
    # See SECURITY_SETUP.md for detailed instructions
    ```
 
-4. Start the development server:
+5. Start the backend server:
 
    ```bash
+   cd backend
+   python -m app.main
+   ```
+
+6. Start the frontend development server:
+
+   ```bash
+   cd frontend
    npm run dev
    ```
 
@@ -106,11 +122,12 @@ Quick checklist:
 
 ### Building for Production
 
-\`\`\`bash
+```bash
+cd frontend
 npm run build
-\`\`\`
+```
 
-The built files will be in the \`dist\` directory.
+The built files will be in the `frontend/dist` directory.
 
 ## 📖 Usage Guide
 
@@ -139,21 +156,41 @@ The built files will be in the \`dist\` directory.
 
 ## 📁 Project Structure
 
-\`\`\`
-src/
-├── components/ # Reusable React components (ready for expansion)
-├── pages/ # Main page components
-│ ├── AuthPage.tsx # Authentication page with login/signup
-│ └── MainAppPage.tsx # Main application interface
-├── types/ # TypeScript type definitions
-│ └── index.ts # Shared types and interfaces
-├── utils/ # Utility functions
-│ ├── auth.ts # Authentication utilities and mock services
-│ └── voice.ts # Voice recording and processing utilities
-├── App.tsx # Main app component with routing logic
-├── main.tsx # Application entry point
-└── index.css # Tailwind CSS imports
-\`\`\`
+```
+├── frontend/           # React frontend application
+│   ├── src/
+│   │   ├── components/ # Reusable React components
+│   │   ├── pages/      # Main page components
+│   │   │   ├── AuthWrapper.tsx
+│   │   │   ├── LoginPage.tsx
+│   │   │   ├── SignUpPage.tsx
+│   │   │   ├── OTPVerificationPage.tsx
+│   │   │   └── MainAppPage.tsx
+│   │   ├── types/      # TypeScript type definitions
+│   │   │   └── index.ts
+│   │   ├── utils/      # Frontend utility functions
+│   │   │   ├── auth.ts
+│   │   │   ├── voice.ts
+│   │   │   ├── apiService.ts
+│   │   │   ├── emailService.ts
+│   │   │   └── otp.ts
+│   │   ├── App.tsx     # Main app component
+│   │   ├── main.tsx    # Application entry point
+│   │   └── index.css   # Tailwind CSS imports
+│   ├── public/         # Static assets
+│   ├── package.json    # Frontend dependencies
+│   └── vite.config.ts  # Vite configuration
+├── backend/            # Python FastAPI backend
+│   ├── app/
+│   │   ├── routes/     # API route handlers
+│   │   ├── services/   # Business logic
+│   │   ├── models/     # Data models
+│   │   ├── database/   # Database connection
+│   │   └── utils/      # Backend utilities
+│   ├── requirements.txt # Backend dependencies
+│   └── .env.example    # Environment variables template
+└── README.md           # Project documentation
+```
 
 ## 🌐 Browser Compatibility
 
@@ -203,10 +240,16 @@ This application uses mock services for demonstration purposes:
 
 ### Available Scripts
 
-- \`npm run dev\` - Start development server with hot reload
-- \`npm run build\` - Build for production with optimization
-- \`npm run preview\` - Preview production build locally
-- \`npm run lint\` - Run ESLint for code quality checks
+**Frontend (in `frontend/` directory):**
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production with optimization
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality checks
+
+**Backend (in `backend/` directory):**
+- `python -m app.main` - Start the FastAPI backend server
+- `python test_api.py` - Test API endpoints
+- `python test_email.py` - Test email functionality
 
 ### Code Quality
 
