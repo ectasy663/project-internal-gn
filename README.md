@@ -105,7 +105,7 @@ A modern, responsive React web application that allows users to record their voi
    npm run dev
    ```
 
-5. Open your browser and navigate to `http://localhost:5173` (or the port shown in terminal)
+7. Open your browser and navigate to `http://localhost:5173` (or the port shown in terminal)
 
 ### 🔐 Security Setup
 
@@ -241,12 +241,14 @@ This application uses mock services for demonstration purposes:
 ### Available Scripts
 
 **Frontend (in `frontend/` directory):**
+
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production with optimization
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint for code quality checks
 
 **Backend (in `backend/` directory):**
+
 - `python -m app.main` - Start the FastAPI backend server
 - `python test_api.py` - Test API endpoints
 - `python test_email.py` - Test email functionality
