@@ -60,27 +60,31 @@ A modern, responsive React web application that allows users to record their voi
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd voice-to-invoice-app
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. **🔒 Set up environment variables (IMPORTANT)**:
+
    ```bash
    # Copy environment templates
    cp .env.example .env
    cp backend/.env.example backend/.env
-   
+
    # Edit the files with your actual credentials
    # See SECURITY_SETUP.md for detailed instructions
    ```
 
 4. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -94,6 +98,7 @@ A modern, responsive React web application that allows users to record their voi
 📖 **Read the complete security guide**: [SECURITY_SETUP.md](./SECURITY_SETUP.md)
 
 Quick checklist:
+
 - [ ] Copy `.env.example` to `.env` and update values
 - [ ] Copy `backend/.env.example` to `backend/.env` and update values
 - [ ] Never commit `.env` files to version control
