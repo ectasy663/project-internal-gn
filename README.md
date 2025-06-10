@@ -62,8 +62,8 @@ A modern, responsive React web application that allows users to record their voi
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
-   cd voice-to-invoice-app
+   git clone https://github.com/ectasy663/project-internal-gn.git
+   cd project-internal-gn
    ```
 
 2. Install frontend dependencies:
